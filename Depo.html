@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Bootstrap</title>
+	
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="depos.js">
+</script>
+	<script>
+		var balance = 100.0;
+		function balance()
+		{
+			alert("you current balance " +balance);
+		}
+		function deposit()
+		{
+			var deposits = document.f2.depos.value;
+			 if (isNaN(deposits) || deposits === '') {
+      alert('Error: please enter a number!');
+      make_deposit();
+    } else {
+      balance += deposit;
+     balance();
+    }
+		}
+		function withdraw()
+		{
+			if (isNaN(withdrawal) || withdrawal === '') {
+      alert('Error: please enter a number!');
+      make_withdrawal();
+    } else {
+      balance -= withdrawal;
+      balance();
+    }
+		}
+
+	</script>
+</head>
+
+<body>
+	<div align="left">
+		<a href="account.html">My Account Details</a>
+		<a href="fund.html">Fund Transfer</a>|
+		<a href="E:\Bannu\Banking Project\loan.html">Loans</a>|
+		<a href="E:\Bannu\Banking Project\service.html">Services</a>|
+		<a href="E:\Bannu\Banking Project\help.html">Help</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="offset-md-3 col-md-4">
+				<form action="login.html" onSubmit="" name="f2">
+					<div class="form-group">
+						 <label for="">Balance</label>
+                            <input type="number" class="form-control" name="balance" id="balance" required onchange="balance()" ><span id="ram1">Balance Must Be 1000rs</span>
+                               </div>
+                               <div class="form-group">
+                               	<label for="">Deposit</label>
+                               	 <input type="number" class="form-control" name="depos" id="deposit" required onchange="deposit()" ><span id="ram2">Deposit Below 49000</span>
+                               	</div>
+                               	<div class="form-group">
+                               	<label for="">Withdrawl</label>
+                               	 <input type="number" class="form-control" name="with" id="withdraw" required onchange="withdraw()"><span id="ram3">withdraw limit daily 25000</span>
+                               	</div>
+                               	<button class="btn btn-primary" onclick="depositsForm()">Click</button>
+
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

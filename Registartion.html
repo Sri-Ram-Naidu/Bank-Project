@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Bootstrap</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script type="text/javascript" src="signup.js"></script>
+<script>
+	function firstName()
+    {
+      var fn = document.f1.name1.value;
+      if(fn.length<=5)
+      document.getElementById("sri1").innerText="FirstName should not be less than 5 characters";
+    else if(fn.length<10)
+      document.getElementById("sri1").innerText="";
+    else
+      document.getElementById("sri1").innerText="Not More Than 10 Characters";
+  }
+  function phoneNumber()
+  {
+  	var num = document.f1.phone.value;
+  	if(num.length==10)
+  		document.getElementById("sri2").innerText="Valid Number";
+  	else 
+  		document.getElementById("sri2").innerText="Not Valid";
+  	}
+  	function aadharCard()
+  	{
+        var cards = document.f1.ad.value;
+        if(cards.length==12)
+        	document.getElementById("sri3").innerText="valid";
+        else
+        	document.getElementById("sri3").innerText="not Valid";
+  	}
+
+
+ </script>
+
+ </head>
+ <body>
+ 	<div class="jumbotron text-center">
+		<h1>Sun Soft Corporation</h1>
+	</div>
+	<div align="right">
+		<a href="E:\Bannu\Banking Project\home.html">Home</a> |
+		<a href="E:\Bannu\Banking Project\login.html">Login</a> |
+<a href="E:\Bannu\Banking Project\business.html">Business</a> |
+<a href="E:\Bannu\Banking Project\help.html">Help</a>
+</div>
+	<div class="container">
+		<div class="row">
+			<div class="offset-md-3 col-md-4">
+				<form action="login.html" onSubmit="" name="f1">
+					<div class="form-group">
+						<label for="">Name</label>
+						<input type="text" class="form-control" name="name1" id="name" required onChange="firstName()"><span id="sri1"><i>Name Must be Valid</i></span>
+					</div>
+					<div class="form-group">
+						<label for="">PhoneNumber</label>
+						<input type="number" class="form-control" name="phone" id="num1" required onChange="phoneNumber()"><span id="sri2"><i>Must Be Valid</i></span>
+					</div>
+					<div class="form-group">
+						<label for="">Aadhar Card</label>
+						<input type="number" class="form-control" name="ad" id="num2" required onChange="aadharCard()"><span id="sri3"><i>Must Be Valid</i></span>
+					</div>
+					<div class="form-group">
+						<label for="">email</label>
+						<input type="email" class="form-control" id="mail" required>
+					</div>
+					<div class="form-group">
+						<label for="">password</label>
+						<input type="password" class="form-control" id="pwd" required>
+					</div>
+					<div align="center">
+						<button class="btn btn-primary" onclick="signupFun()">SignUp</button>
+		               
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+ 
+
+ </body>
+</html>

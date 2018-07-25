@@ -1,0 +1,93 @@
+<html>
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <div class="jumbotron text-center">
+    <h1>Sun Soft Corporation</h1>
+<script>
+  var balance = 100.0; //set initial balance.
+  function get_balance() {
+    alert('Your current balance is: '+balance);
+    atm();
+  }
+  function make_deposit() {
+    var deposit = parseFloat(prompt('How much would you like to deposit?'));
+    if (isNaN(deposit) || deposit === '') {
+      alert('Error: please enter a number!');
+      make_deposit();
+    } else {
+      balance += deposit;
+      get_balance();
+    }
+  }
+  function make_withdrawal() {
+    var withdrawal = parseFloat(prompt('How much would you like to withdrawal?'));
+    if (isNaN(withdrawal) || withdrawal === '') {
+      alert('Error: please enter a number!');
+      make_withdrawal();
+    } else {
+      balance -= withdrawal;
+      get_balance();
+    }
+  }
+  function error() {
+    alert('Error: accepted numbers are 1 through 4.');
+    atm();
+  }
+  function exit() {
+    var confirm_leave = confirm('You have selected exit.');
+    if (confirm_leave) {
+      window.close();
+    } else {
+      atm();
+    }
+  }
+  function atm() {
+    var choice = parseInt(prompt('Select a choice 1.) Balance 2.) Deposit 3.) Withdrawal 4.) Exit')); //prompt user for choice.
+    if (choice === 1) {
+      get_balance();
+    } else if (choice === 2) {
+      make_deposit();
+    } else if (choice === 3) {
+      make_withdrawal();
+    } else if (choice === 4) {
+      exit();
+    } else {
+      error();
+    }
+  }
+  atm();
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-3 col-md-4">
+        <form>
+          
+          <div class="form-group">
+            <label for="">Balance</label>
+            <input type="number" class="form-control" id="balance" onclick="get_balance()" required>
+          </div>
+          <div class="form-group">
+            <label for="">password</label>
+            <input type="password" class="form-control" id="pwd" required>
+          </div>
+          <div align="center">
+            <button class="btn btn-primary" onclick="loginFun()">Login</button>
+          </div>
+          <button onclick="window.location.href='Registartion.html'">SignUp</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</html>

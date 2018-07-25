@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<form name="f1"   action="thank.html">
+<script>
+      function account()
+      {
+          var a = document.f1.d1.value;
+          if(a.length==0)
+          {
+          document.getElementById("sanj").innerText="account number can't be blank";
+          }
+          else if(a.length<16)
+         {
+          document.getElementById("sanj").innerText="account number must be 16 digits";
+      }
+      else
+      {
+        document.getElementById("sanj").innerText="valid account number";
+      }
+      }
+
+
+      function benacct()
+      {
+
+          var b=document.f1.d2.value;
+
+          if(b.length=="")
+          {
+              document.getElementById("sanj1").innerText="name cann't be empty";
+          }
+          else if(b.length<6)
+          {
+            document.getElementById("sanj1").innerText="name should be minimum 6 characters ";
+          }
+          else{
+            document.getElementById("sanj1").innerText="valid name";
+          }
+      }
+      function  account1()
+      {
+          var c=document.f1.d3.value;
+          
+            if(c.length=="")
+                document.getElementById("sanj2").innerText="name cn't be blank";
+          
+            else if(c.length<16)
+            {
+                document.getElementById("sanj2").innerText="account number must be 16 digits";
+
+            }
+            else{
+                document.getElementById("sanj2").innerText="valid name";
+            }
+
+      }
+
+
+      function ifsc()
+      {
+           var d=document.f1.d4.value;
+          if(d.length=="")
+          {
+            document.getElementById("sanj3").innerText="ifsc code cann't be empty";
+
+          }
+          else if(d.length<11)
+          {
+            document.getElementById("sanj3").innerText="ifsc code must be 11 characters";
+
+          }
+          else{
+            document.getElementById("sanj3").innerText="valid ifsc code";
+
+          }
+      }
+
+
+      function amount()
+    {
+        var e=document.f1.d5.value;
+        if(e.length=="")
+          {
+            document.getElementById("sanj4").innerText="amount must be entered"
+
+          }
+          else(d.length>=1)
+          {
+            document.getElementById("sanj4").innerText="valid amount ";
+
+
+    }
+
+    }
+
+    function myclick()
+    {
+        confirm("Do you want to Continue??");
+    }
+
+  </script>
+</head>
+<body>
+  <div align="left">
+    <a href="account.html">My Account Details</a>|
+    <a href="fund.html">Fund Transfer</a>|
+    <a href="E:\Bannu\Banking Project\loan.html">Loans</a>|
+    <a href="E:\Bannu\Banking Project\service.html">Services</a>|
+    <a href="E:\Bannu\Banking Project\help.html">Help</a>
+  </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-md-4 col-md-8">
+                <form name="f1" >
+                    
+                    <h1 >Welcome to Fund Transfer</h1>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label>Debit from Account:</label>
+                        <input type="text"  name="da" class="form-control" id="d1"  onChange="account()" required><span id="sanj" style="color:red">username can't be empty</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Benficiary Name:</label>
+                        <input type="text" name="ds" class="form-control" id="d2" onChange="benacct()" required><span id="sanj1" style="color:red "></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Benficiary Account number:</label>
+                        <input type="text"name="df" class="form-control" id="d3" onChange="account1()" required><span id="sanj2" style="color: red"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Benficiary IFSC code:</label>
+                        <input type="text"name="gf"class="form-control" id="d4" onChange="ifsc()"required><span id="sanj3" style="color:red"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount to be Transfer:</label>
+                        <input type="text" name="mf" class="form-control" id="d5" onchange="amount()" required><span id="sanj4" style="color:red"></span>
+                    </div>
+                    <div>
+                        <input type="submit" value="submit" onClick="myclick()" >
+                        <input type="reset" value="reset">           
+                    </div>
+                    <hr>
+  <footer>
+    <div align="center">
+    <p>Copyright By @SunSoftBank</p>
+    <p>Email : <a href src="sriram1491@bank.com">sriram@bank.com</p>
+  </div>
+</footer>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
